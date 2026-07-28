@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Placa — Leitura inteligente de placas para segurança pública</title>
+  <meta name="description" content="Smart Placa: consulta de placas em segundos, alertas automáticos às autoridades e fiscalização em tempo real. Baixe o app para iOS e Android." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231F2A44'/%3E%3Ctext x='16' y='20' font-family='Arial,sans-serif' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3ESP%3C/text%3E%3Crect x='6' y='24' width='20' height='3' rx='1.5' fill='%23F5A623'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<header class="topo">
+  <a class="marca" href="#" aria-label="Smart Placa — início">
+    <span class="marca-smart">Smart</span><span class="marca-placa">Placa</span>
+  </a>
+  <nav class="menu">
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#modulos">Módulos</a>
+    <a href="#seguranca">Segurança</a>
+    <button class="btn-entrar" data-abrir-login>Entrar</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-texto">
+      <h1>Leitura inteligente de placas para a segurança pública</h1>
+      <p>Consulte qualquer placa em segundos pela câmera do celular. Restrições de
+      roubo, furto, clonagem e pendências — com alerta automático às autoridades
+      quando importa.</p>
+      <div class="hero-acoes">
+        <a class="loja" href="#" aria-disabled="true" title="Em breve">
+          <small>Em breve na</small><strong>App Store</strong>
+        </a>
+        <a class="loja" href="#" aria-disabled="true" title="Em breve">
+          <small>Em breve no</small><strong>Google Play</strong>
+        </a>
+      </div>
+      <p class="hero-nota">O Smart Placa é um sistema para órgãos públicos (DETRAN,
+      Polícias, GCM) com participação cidadã. Uso principal pelo aplicativo.</p>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="placa-demo">
+        <div class="placa-faixa">BRASIL</div>
+        <div class="placa-numero">ABC1D23</div>
+      </div>
+      <div class="scan-linha"></div>
+      <div class="resultado-demo ok">✓ Sem restrições</div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="secao">
+    <h2>Como funciona</h2>
+    <div class="passos">
+      <div class="passo">
+        <span class="passo-num">1</span>
+        <h3>Aponte a câmera</h3>
+        <p>O reconhecimento é feito no próprio celular — rápido e sem enviar
+        imagens desnecessárias.</p>
+      </div>
+      <div class="passo">
+        <span class="passo-num">2</span>
+        <h3>Resultado em segundos</h3>
+        <p>Verde: liberado. Vermelho: restrição de roubo, furto, clonagem,
+        judicial, IPVA ou licenciamento.</p>
+      </div>
+      <div class="passo">
+        <span class="passo-num">3</span>
+        <h3>Autoridades notificadas</h3>
+        <p>Em restrição crítica, o alerta vai automaticamente às equipes mais
+        próximas — com foto, hora e local.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="modulos" class="secao secao-escura">
+    <h2>Um sistema, três módulos</h2>
+    <div class="cartoes">
+      <div class="cartao-modulo">
+        <h3>📱 Cidadão</h3>
+        <p>Consulta pela câmera ou digitada, denúncia com localização, histórico e
+        canal direto com a central via WhatsApp.</p>
+      </div>
+      <div class="cartao-modulo">
+        <h3>🚓 Agente Público</h3>
+        <p>Live Placa para blitz com leitura contínua, alertas sonoros, painel
+        luminoso e recebimento de ocorrências por proximidade.</p>
+      </div>
+      <div class="cartao-modulo">
+        <h3>🖥️ Centro de Controle</h3>
+        <p>Mapa de ocorrências em tempo real, gestão de alertas, relatórios com IA
+        para gestores e auditoria completa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="seguranca" class="secao">
+    <h2>Segurança e LGPD desde o projeto</h2>
+    <ul class="lgpd-lista">
+      <li>Consentimento explícito do cidadão antes de qualquer envio automático</li>
+      <li>Evidências com hash criptográfico — cadeia de custódia com valor probatório</li>
+      <li>Toda consulta auditada; princípio do menor privilégio por perfil</li>
+      <li>Comunicação criptografada e opção de instalação on-premise no órgão</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div>
+    <span class="marca marca-rodape"><span class="marca-smart">Smart</span><span class="marca-placa">Placa</span></span>
+    <p>www.smartplaca.com.br</p>
+  </div>
+  <p>© 2026 Smart Placa. Tratamento de dados conforme a LGPD (Lei 13.709/2018).</p>
+</footer>
+
+<!-- Módulo de login -->
+<div class="login-sobreposicao" id="login-sobreposicao" hidden>
+  <div class="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-titulo">
+    <button class="fechar" data-fechar-login aria-label="Fechar">×</button>
+    <h2 id="login-titulo">Acessar o sistema</h2>
+    <p class="login-sub">Para usuários já cadastrados. O uso completo do Smart Placa
+    é pelo aplicativo.</p>
+    <form id="form-login">
+      <label>E-mail
+        <input type="email" name="email" required autocomplete="username" />
+      </label>
+      <label>Senha
+        <input type="password" name="senha" required minlength="8" autocomplete="current-password" />
+      </label>
+      <p class="login-erro" id="login-erro" hidden></p>
+      <button type="submit" class="btn-primario" id="login-botao">Entrar</button>
+    </form>
+    <p class="login-aviso">Acesso auditado. Agentes públicos: MFA obrigatório.</p>
+  </div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
