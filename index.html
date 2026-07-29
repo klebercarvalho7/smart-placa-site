@@ -117,24 +117,56 @@
   <p>© 2026 Smart Placa. Tratamento de dados conforme a LGPD (Lei 13.709/2018).</p>
 </footer>
 
-<!-- Módulo de login -->
+<!-- Módulo de login (docs/14) -->
 <div class="login-sobreposicao" id="login-sobreposicao" hidden>
   <div class="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-titulo">
     <button class="fechar" data-fechar-login aria-label="Fechar">×</button>
-    <h2 id="login-titulo">Acessar o sistema</h2>
-    <p class="login-sub">Para usuários já cadastrados. O uso completo do Smart Placa
-    é pelo aplicativo.</p>
-    <form id="form-login">
-      <label>E-mail
-        <input type="email" name="email" required autocomplete="username" />
-      </label>
-      <label>Senha
-        <input type="password" name="senha" required minlength="8" autocomplete="current-password" />
-      </label>
-      <p class="login-erro" id="login-erro" hidden></p>
-      <button type="submit" class="btn-primario" id="login-botao">Entrar</button>
-    </form>
-    <p class="login-aviso">Acesso auditado. Agentes públicos: MFA obrigatório.</p>
+
+    <!-- Etapa 1: quem está entrando. Os dois perfis usam credenciais
+         diferentes (CPF x e-mail funcional), então perguntar antes evita um
+         formulário com dois campos de identificação. -->
+    <div id="login-escolha">
+      <h2 id="login-titulo">Quem está acessando?</h2>
+      <p class="login-sub">O uso completo do Smart Placa é pelo aplicativo. A web
+      traz o essencial.</p>
+      <button type="button" class="btn-perfil" data-perfil="cidadao">
+        <span class="btn-perfil-icone" aria-hidden="true">👤</span>
+        <span class="btn-perfil-texto">
+          <strong>Sou cidadão</strong>
+          <small>Meus dados, veículos e ocorrências</small>
+        </span>
+        <span class="btn-perfil-seta" aria-hidden="true">›</span>
+      </button>
+      <button type="button" class="btn-perfil" data-perfil="agente">
+        <span class="btn-perfil-icone" aria-hidden="true">🛡️</span>
+        <span class="btn-perfil-texto">
+          <strong>Sou agente público</strong>
+          <small>Centro de Controle e painel gerencial</small>
+        </span>
+        <span class="btn-perfil-seta" aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    <!-- Etapa 2: credenciais do perfil escolhido -->
+    <div id="login-form-area" hidden>
+      <button type="button" class="voltar" id="login-voltar">‹ Trocar perfil</button>
+      <h2 id="login-form-titulo">Entrar</h2>
+      <p class="login-sub" id="login-form-sub"></p>
+      <form id="form-login">
+        <label id="rotulo-identificador">
+          <span id="texto-identificador">CPF</span>
+          <input type="text" name="identificador" id="campo-identificador" required
+                 autocomplete="username" inputmode="numeric" />
+        </label>
+        <label>Senha
+          <input type="password" name="senha" id="campo-senha" required
+                 autocomplete="current-password" />
+        </label>
+        <p class="login-erro" id="login-erro" hidden></p>
+        <button type="submit" class="btn-primario" id="login-botao">Entrar</button>
+      </form>
+      <p class="login-aviso" id="login-aviso">Acesso auditado.</p>
+    </div>
   </div>
 </div>
 

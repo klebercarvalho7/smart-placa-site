@@ -1,12 +1,17 @@
-/* Identidade Smart Placa — cores extraídas da logo oficial */
+/* Identidade Smart Placa (docs/10): preto e branco, laranja só em ação e
+   status. `--navy` virou apelido do preto para as regras existentes não
+   precisarem ser reescritas uma a uma. */
 :root {
-  --navy: #1F2A44;
-  --navy-claro: #33415E;
+  --preto: #0A0A0A;
+  --navy: #0A0A0A;
+  --navy-claro: #1C1C1E;
   --laranja: #F5A623;
   --fundo: #FFFFFF;
-  --fundo-suave: #F5F7FA;
-  --texto-suave: #5A6478;
-  --ok: #1F8A4C;
+  --fundo-suave: #F7F7F8;
+  --texto-suave: #74787F;
+  --linha: #E9EBEF;
+  --ok: #1E8E3E;
+  --critico: #D93025;
 }
 
 * { box-sizing: border-box; }
@@ -273,3 +278,46 @@ h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
   .hero { grid-template-columns: 1fr; }
   .menu a { display: none; }
 }
+
+
+/* ---------- escolha de perfil no login (docs/14) ---------- */
+.btn-perfil {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--linha);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 12px;
+  font: inherit;
+  color: var(--preto);
+  cursor: pointer;
+  transition: border-color .15s, transform .15s;
+}
+.btn-perfil:hover { border-color: var(--laranja); transform: translateY(-1px); }
+.btn-perfil:focus-visible { outline: 2px solid var(--laranja); outline-offset: 2px; }
+.btn-perfil-icone {
+  width: 46px; height: 46px; flex: none;
+  display: grid; place-items: center;
+  font-size: 22px;
+  background: rgba(10, 10, 10, .06);
+  border-radius: 12px;
+}
+.btn-perfil-texto { flex: 1; display: flex; flex-direction: column; }
+.btn-perfil-texto strong { font-size: 16px; font-weight: 600; }
+.btn-perfil-texto small { font-size: 13px; color: var(--texto-suave); }
+.btn-perfil-seta { color: var(--texto-suave); font-size: 22px; }
+
+.voltar {
+  background: none;
+  border: 0;
+  padding: 0 0 10px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--texto-suave);
+  cursor: pointer;
+}
+.voltar:hover { color: var(--preto); }
