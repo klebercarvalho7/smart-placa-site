@@ -130,6 +130,22 @@ for (const el of document.querySelectorAll('[data-perfil]')) {
 }
 document.getElementById('login-voltar').addEventListener('click', mostrarEscolha);
 
+// Cadastro e recuperação de senha vivem no sistema web (React), não aqui: são
+// formulários de vários passos, e mantê-los numa página estática duplicaria a
+// validação de CPF, CEP e termo em dois lugares.
+for (const el of document.querySelectorAll('[data-ir-cadastro]')) {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = `${CONFIG.appUrl}/#cadastro`;
+  });
+}
+for (const el of document.querySelectorAll('[data-ir-recuperar]')) {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = `${CONFIG.appUrl}/#recuperar`;
+  });
+}
+
 sobreposicao.addEventListener('click', (e) => {
   if (e.target === sobreposicao) fechar();
 });
